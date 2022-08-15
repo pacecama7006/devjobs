@@ -9,6 +9,10 @@ class Vacante extends Model
 {
     use HasFactory;
 
+    // Variable que me va a permitir que ultimo_dia, sí sea considerada fecha
+    // y no un string
+    
+    protected $dates = ['ultimo_dia'];
     protected $fillable = [
         'titulo',
         'salario_id',

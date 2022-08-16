@@ -19,6 +19,9 @@ class CrearVacante extends Component
     public $descripcion;
     public $imagen;
 
+    /**Reglas de validación. Forzosamente la variable tiene que llamarse
+     * rules en livewire
+     */
     protected $rules = [
         'titulo' => 'required|string',
         'salario' => 'required',
@@ -36,6 +39,7 @@ class CrearVacante extends Component
     // Función que se comunica con el formulario que está en crear-vacante.blade
     public function crearVacante()
     {
+        // hago la validación y lo guardo en una variable que llamo datos
         $datos = $this->validate();
         // dd($datos);
 

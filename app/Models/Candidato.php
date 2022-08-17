@@ -24,4 +24,12 @@ class Candidato extends Model
     {
         return $this->belongsTo(Vacante::class);
     }
+
+    /**Con usuario. Un usuario pertenece a un candidato. Un candidato pertenece
+     * a un usuario
+    */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

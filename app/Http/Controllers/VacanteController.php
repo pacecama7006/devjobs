@@ -14,7 +14,10 @@ class VacanteController extends Controller
      */
     public function index()
     {
-        //
+        //utilizo policy para evitar que los desarrolladores vean el modelo
+        // de vacante y no puedan crear, ni editar, etc
+        $this->authorize('viewAny', Vacante::class);
+
         return view('vacantes.index');
     }
 
@@ -25,7 +28,9 @@ class VacanteController extends Controller
      */
     public function create()
     {
-        //
+        //utilizo policy para evitar que los desarrolladores vean el modelo
+        // de vacante y no puedan crear, ni editar, etc
+        $this->authorize('create', Vacante::class);
         return view('vacantes.create');
     }
 

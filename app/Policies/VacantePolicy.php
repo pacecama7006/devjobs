@@ -18,7 +18,10 @@ class VacantePolicy
      */
     public function viewAny(User $user)
     {
-        //
+        //Prevengo que los usuarios que están como developers vean
+        // el modelo de vacantes para que no puedan ver el dashboard de
+        // vacantes 
+        return $user->rol === 2;
     }
 
     /**
@@ -41,7 +44,9 @@ class VacantePolicy
      */
     public function create(User $user)
     {
-        //
+        //Prevengo que los usuarios que están como developers vean
+        // el modelo de vacantes para que no puedan crear una vacante 
+        return $user->rol === 2;
     }
 
     /**

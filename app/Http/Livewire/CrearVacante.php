@@ -33,7 +33,7 @@ class CrearVacante extends Component
 
     ];
 
-    // Línea necesaria para poder procesar imágenes con livewire
+    // Línea necesaria para poder procesar archivos con livewire
     use WithFileUploads;
 
     // Función que se comunica con el formulario que está en crear-vacante.blade

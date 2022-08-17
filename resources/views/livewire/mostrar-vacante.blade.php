@@ -40,4 +40,11 @@
             </p>
         </div>
     @endguest
+    
+    {{-- Directiva que utiliza el policy de Vacante para que los reclutadores
+        no puedan ver este componente --}}
+    @cannot('create', App\Models\Vacante::class)
+    {{-- Le paso al componente la variable de vacante --}}
+    <livewire:postular-vacante :vacante="$vacante"/>
+    @endcannot
 </div>
